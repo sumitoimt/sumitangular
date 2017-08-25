@@ -1,0 +1,135 @@
+<!-- <form #f="ngForm" (ngSubmit) = "onSubmit(f)">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" class="form-control" name="title" [ngModel]="title">
+    
+  </div>
+  <div class="form-group">
+     <label for="slug">Slug</label>
+    <input class="form-control" type="text" id="slug" name="slug" ngModel>
+    
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+     <select class="form-control" id="category" name="category" ngModel>
+    
+      <option value="politics">Politics</option>
+      <option value="sports">Sports</option>
+      <option value="international">International</option>
+     
+    </select>
+    
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+     <select class="form-control" id="author" name="author" ngModel>
+
+      <option value="john">John</option>
+      <option value="tom">Tom</option>
+      <option value="jack">Jack</option>
+      
+    </select>
+    
+  </div>
+  <div class="form-group">
+     <label for="short_description">Short Description</label>
+     <textarea class="form-control" id="short_description" name="short_description" rows="3" ngModel></textarea>
+    
+  </div>
+   <div class="form-group">
+     <label for="short_description">Full Content</label>
+     <textarea class="form-control" id="full_content" name="full_content" rows="3" ngModel></textarea>
+    
+  </div>
+  
+  
+  
+ <button class="btn btn-primary" type="submit">Submit</button>
+</form> -->
+
+
+<hr><hr>
+
+
+
+
+
+
+
+<!-- <form #f="ngForm" (ngSubmit) = "onSubmit(f)">
+<div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" [ngModel]="title">
+    <label for="slug">Slug</label>
+    <input type="text" id="slug" name="slug" ngModel>
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" ngModel>
+    <label for="author">Author</label>
+    <input type="text" id="author" name="author" ngModel>
+    <label for="short_description">Short Description</label>
+    <input type="text" id="short_description" name="short_description" ngModel>
+    <label for="full_content">Full Content</label>
+    <input type="text" id="full_content" name="full_content" ngModel>
+    
+</div>
+<button class="btn btn-primary" type="submit">Submit</button>
+</form> -->
+
+
+<button class="btn btn-primary" (click)="onGetQuotes()">Get Quotes</button>
+<hr>
+
+
+<!--  <app-quote *ngFor="let quote of quotes" [quote]="quote">{{quote}}</app-quote>  -->
+
+<div *ngFor="let quote of list">
+	<div *ngFor="let quotes of quote">
+
+		<div class="container">
+    <div class="row">
+      
+          
+            <div class="row">
+
+				
+
+                <div class="col-md-12 post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                <strong><a href="#" class="post-title">{{quotes.title}}</a></strong></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 post-header-line">
+                            <span class="glyphicon glyphicon-user"></span>by <a href="#">{{quotes.author}}</a> | <span class="glyphicon glyphicon-calendar">
+                            </span>{{quotes.created_at | date}} | <span class="glyphicon glyphicon-tags">
+                                </span>Category : <a href="#"><span class="label label-info">{{quotes.category}}</span></a>
+                        </div>
+                    </div>
+                    <div class="row post-content">
+                       
+                        <div class="col-md-12">
+                            <p *ngIf="id_full!=quotes.id ">
+                                {{quotes.short_description}}
+                            </p>
+                            <p *ngIf="id_full==quotes.id">{{full_content}}</p>
+                            <p>
+                                <a class="btn btn-read-more" (click) = "onShow(quotes.slug)" href="#">Read more</a>
+                                <a href="#" (click)="onEdit(quotes.id)">Edit</a>
+								<a href="#" (click)="onDelete(quotes.id)">Delete</a>
+								
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+       
+       
+    </div>
+</div>
+
+
+
+</div></div> 
