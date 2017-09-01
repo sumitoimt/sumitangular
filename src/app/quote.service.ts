@@ -30,7 +30,7 @@ let  requestOptions :any = new RequestOptions({
 	    let headers = new Headers({ 'Content-Type': 'application/json' });
 	    let options = new RequestOptions({ headers: headers });
 	    let body = JSON.stringify(content);
-	    return this.http.post('https://localhost/laravelcrud/public/api/news/store', body, options ).map((res: Response) => res.json());
+	    return this.http.post('http://localhost/laravelcrud/public/api/news/store', body, options ).map((res: Response) => res.json());
   	}
 
 	/*getHeader()
@@ -66,14 +66,14 @@ let  requestOptions :any = new RequestOptions({
 	
 	getQuotes(): Observable<any>{
 		
-		return this.http.get('https://localhost/laravelcrud/public/api/news').map((response: Response) => {return response.json()});
+		return this.http.get('http://localhost/laravelcrud/public/api/news').map((response: Response) => {return response.json()});
 }
 
 	updateQuote(id: number, newContent: string)
 	{
 		const body = JSON.stringify({content: newContent});
 		const headers = new Headers({'content-type':'application/json'});
-		return this.http.put('https://localhost/laravelcrud/public/api/news' + id, body, {headers:headers})
+		return this.http.put('http://localhost/laravelcrud/public/api/news' + id, body, {headers:headers})
 		.map(
 			(response:Response) => response.json()
 			);
@@ -82,13 +82,13 @@ let  requestOptions :any = new RequestOptions({
 	deleteQuote(id: number)
 	{
 
-		return this.http.delete('https://localhost/laravelcrud/public/api/news/delete/'+id);
+		return this.http.delete('http://localhost/laravelcrud/public/api/news/delete/'+id);
 	}
 
 	showQuote(content:string)
 	{
 
-		return this.http.get('https://localhost/laravelcrud/public/api/news/'+content).map((response: Response) => {return response.json()});
+		return this.http.get('http://localhost/laravelcrud/public/api/news/'+content).map((response: Response) => {return response.json()});
 	}
 }
 

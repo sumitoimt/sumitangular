@@ -8,8 +8,12 @@ import { NewQuoteComponent } from './new-quote/new-quote.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import  { routing } from './app.routing';
 import { QuoteService } from "./quote.service";
+import { PostalService } from "./postal.service";
+import { ShortnewsService } from "./shortnews.service";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader, MissingTranslationHandler } from 'ng2-translate';
+import { PostalCodeComponent } from './postal-code/postal-code.component';
+import { ShortNewsComponent } from './short-news/short-news.component';
 
 //import { LanguagePipe } from './language.pipe';
 //import { TranslateComponent } from './translate/translate.component';
@@ -24,7 +28,9 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     QuoteComponent,
     NewQuoteComponent,
-    QuotesComponent
+    QuotesComponent,
+    PostalCodeComponent,
+    ShortNewsComponent
    
   ],
   imports: [
@@ -42,7 +48,7 @@ export function createTranslateLoader(http: Http) {
     })
    
   ],
-  providers: [ QuoteService ],
+  providers: [ QuoteService, PostalService, ShortnewsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
