@@ -1,0 +1,49 @@
+
+<input id="postal" class="form-control" type="text" [(ngModel)]="postal"/>
+<button class="btn btn-primary" (click)="onSubmitPostal()">Check Postal code</button>
+
+
+
+ <table class="table table-striped">
+    <thead>
+      <tr>
+     
+        <th>BranchType</th>
+        <th>Circle</th>
+        <th>Country</th>
+        <th>DeliveryStatus</th>
+        <th>Description</th>
+        <th>District</th>
+        <th>Name</th>
+        <th>Region</th>
+        <th>State</th>
+        <th>Taluk</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      
+    
+
+
+<tr *ngFor="let quote of list.PostOffice;">
+
+		
+        <td>{{ quote.BranchType }}</td>
+        <td>{{ quote.Circle }}</td>
+        <td>{{ quote.Country }}</td>
+        <td>{{ quote.DeliveryStatus }}</td>
+        <td>{{ quote.Description }}</td>
+        <td>{{ quote.District }}</td>
+        <td>{{ quote.Name }}</td>
+        <td>{{ quote.Region }}</td>
+        <td>{{ quote.State }}</td>
+        <td>{{ quote.Taluk }}</td>
+        
+     
+		
+</tr>
+
+
+</tbody>
+  </table>
